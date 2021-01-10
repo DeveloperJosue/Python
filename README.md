@@ -1,2 +1,2 @@
-# Ola Mundo
- Primeiro reposiótio 
+# Python
+ Projetos em Python.
