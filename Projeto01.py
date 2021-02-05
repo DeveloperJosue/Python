@@ -3,12 +3,10 @@ print('Curriculo')
 time.sleep (1)
 nome = str(input('Qual é seu nome: '))
 idade = int(input(f'Ótimo {nome}, agora qual é sua idade: '))
-While True 
-if idade < 18: 
+if idade == 18: 
+   print('Vamos continuar !')
+else:
     print('Infelizmente voce não pode continuar')
-    exit 
-else: 
-    print('Vamos continuar !')
 time.sleep (1)
 print(''' 
     1 - TI
