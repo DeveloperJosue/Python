@@ -3,12 +3,18 @@ print('Curriculo')
 time.sleep (1)
 nome = str(input('Qual é seu nome: '))
 idade = int(input(f'Ótimo {nome}, agora qual é sua idade: '))
-email = str(input(f'{nome} precisamos de um email de contato seu: '))
 if idade == 18: 
    print('Vamos continuar !')
 else:
     print('Infelizmente voce não pode continuar')
 time.sleep (1)
+while True: 
+    email = ''
+    email = str(input('Digite seu email: '))
+    while email not in '@gmail.com':
+        email = str(input('Digite seu email: '))
+    if email == '@gmail.com':
+        break 
 print(''' 
     1 - TI
     2 - Mecânica
