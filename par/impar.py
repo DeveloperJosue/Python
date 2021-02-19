@@ -1,6 +1,8 @@
 from random import randint
 import time 
+
 v = 0
+
 titulo = 'Vamos Jogar Par ou Impar'
 print(f'\033[34m{titulo:-^50}\033[m')
 time.sleep(1)
