@@ -12,8 +12,10 @@ time.sleep(0.5)
 while True:
     novamente = ' '
     while True:
-        jogador = int(input('Digite um valor até 9: '))
-        computador = randint(0, 10)
+        jogador = ' '
+        while jogador <= '9':
+            jogador = int(str('Digite um valor até 9: ')) .strip() [0]
+        computador = randint(0, 9)
         total = jogador + computador 
         tipo = ' '
         while tipo not in 'PI':
