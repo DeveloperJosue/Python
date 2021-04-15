@@ -17,7 +17,9 @@ if idade <= 17:   #Idade
 if idade >= 18:
     print(f'Vamos continuar {nome}')
 time.sleep (1)
-email = str(input('Digite seu email para contatos futuros: '))
+email = str(input('''Digite seu email.
+Obs: Precisa ser um email valido! Pois entraremos em contato atravez dele!!
+Email: '''))
 time.sleep(1)
 print(''' 
     1 - TI
