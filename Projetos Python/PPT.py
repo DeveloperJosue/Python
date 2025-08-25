@@ -10,7 +10,9 @@ nome = str(input('Nome do Jogador: '))
 time.sleep(1)
 
 while True:
-    cont = 0
+    contV = 0
+    contD = 0
+    contE = 0
     itens = ('Pedra', 'Papel', 'Tesoura')
     computador = randint(0, 2)
 
@@ -21,6 +23,11 @@ while True:
     time.sleep(1)
 
     jogador = int(input('Qual é sua Jogada: '))
+
+    if jogador < 0 or jogador > 2:
+        print('Jogada INVÁLIDA!! Tente Novamente. ')
+        continue
+
     time.sleep(0.5)
     print('Vamos Lá')
     time.sleep(0.5)
@@ -40,33 +47,39 @@ while True:
     if computador == 0:   #Computador Jogou Pedra
         if jogador == 0:
             print('Empate!!')
+            contE =+ 1
         elif jogador == 1:
             print('Você Venceu!!')
-            cont =+1
+            contV =+ 1
         elif jogador == 2:
             print('Você Perdeu!!')
+            contD =+ 1
         else:
             print('Jogada INVÁLIDA!! Tente Novamente. ')
 
     elif computador == 1:   #Computador Jogou Papel
         if jogador == 0:
             print('Você Perdeu!!')
+            contD =+ 1
         elif jogador == 1:
             print('Empate!!')
+            contE =+ 1
         elif jogador == 2:
             print('Você Ganhou!!')
-            cont =+1
+            contV =+1
         else:
             print('Jogada INVÁLIDA!! Tente Novamente. ')
 
     elif computador == 2:   #Computador Jogou Tesoura
         if jogador == 0:
             print('Você Ganhou!!')
-            cont =+1
+            contV =+1
         elif jogador == 1:
             print('Você Perdeu!!')
+            contD =+ 1
         elif jogador == 2:
             print('Empate')
+            contE =+ 1
         else:
             print('Jogada INVÁLIDA!! Tente Novamente. ')
     
@@ -75,6 +88,6 @@ while True:
         break 
     time.sleep(1)
 print('-='*10)
-print(f'Você ganhou {cont} vezes.')
+print(f'Você ganhou {contV} vezes, perdeu {contD} vezes e empatou {contE} vezes.')
 time.sleep(1)
 print(f'FIM DO JOGO! Obrigado por jogar {nome}.')
