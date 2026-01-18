@@ -98,7 +98,7 @@ while True:
 
 #Finalização do Jogo
 
-time.sleep(1) 
+time.sleep(0.5) 
 print('-='*15)
 print(f'''Seu resumo da partida: 
     Vitórias: {contV} vezes;
@@ -106,5 +106,6 @@ print(f'''Seu resumo da partida:
     Empates:  {contE} vezes.
     Com o total de {contV + contD + contE} partidas.''') # Contagem Final
 print('-='*15)
-time.sleep(3)
+time.sleep(5)
+
 print(f'FIM DO JOGO! Obrigado por jogar {nome}.')
