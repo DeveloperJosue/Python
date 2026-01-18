@@ -2,17 +2,21 @@ time = list()
 jogador = dict()
 partidas = list()
 
+# Cadastro de jogadores
 while True:
     jogador.clear()
     jogador['nome'] = str(input('Nome do Jogador: '))
     tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
     partidas.clear()
 
+# Registro de gols por partida
     for c in range(0, tot): 
         partidas.append(int(input(f'   Quantos gols na partidas {c+1}? ')))
     jogador['gols'] = partidas[:]
     jogador['total'] = sum(partidas)
     time.append(jogador.copy())
+
+# Continuação do cadastro
     while True:
         resp = str(input('Quer continuar? [S/N] ')).upper()[0]
         if resp in 'SN':
@@ -21,6 +25,7 @@ while True:
     if resp == 'N':
         break
 
+# Exibição do relatório
 print('-=' * 30)
 print('cod', end='')
 for i in jogador.keys():
@@ -34,6 +39,7 @@ for k,v in enumerate(time):
     print()
 print('-' * 40)
 
+# Consulta detalhada de desempenho dos jogadores
 while True:
     busca = int(input('Mostrar dados de qual jogador (999 para parar) '))
     if busca == 999:
