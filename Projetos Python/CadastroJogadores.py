@@ -1,6 +1,8 @@
-time = list()
+timej = list()
 jogador = dict()
 partidas = list()
+
+import time 
 
 # Cadastro de jogadores
 while True:
@@ -14,7 +16,7 @@ while True:
         partidas.append(int(input(f'   Quantos gols na partidas {c+1}? ')))
     jogador['gols'] = partidas[:]
     jogador['total'] = sum(partidas)
-    time.append(jogador.copy())
+    timej.append(jogador.copy())
 
 # Continuação do cadastro
     while True:
@@ -25,6 +27,10 @@ while True:
     if resp == 'N':
         break
 
+time.sleep(0.3)
+print('Cadastro finalizado!')
+time.sleep(0.5)
+
 # Exibição do relatório
 print('-=' * 30)
 print('cod', end='')
@@ -32,7 +38,7 @@ for i in jogador.keys():
     print(f' {i:<15}', end='')
 print()
 print('-' * 40)
-for k,v in enumerate(time):
+for k,v in enumerate(timej):
     print(f' {k:>3}', end='')
     for d in v.values():
         print(f' {str(d):<15}', end='')
@@ -41,14 +47,18 @@ print('-' * 40)
 
 # Consulta detalhada de desempenho dos jogadores
 while True:
-    busca = int(input('Mostrar dados de qual jogador (999 para parar) '))
-    if busca == 999:
-        break
-    if busca >= len(time):
+    try:
+        busca = int(input('Mostrar dados de qual jogador (99 exit) '))
+    except ValueError:
+        print('ERRO! Digite o COD do jogador.')      #Tratamento de erro para entrada inválida
+        continue
+    if busca == 99:
+        break                                    # Sair do loop
+    if busca >= len(timej):
         print(f'ERRO! Não existe jogador com código {busca}!')
     else:
-        print(f' -- LEVANTAMENTO DO JOGADOR {time[busca] ["nome"]}: ')
-        for i, g in enumerate(time[busca]['gols']):
+        print(f' -- LEVANTAMENTO DO JOGADOR {timej[busca] ["nome"]}: ')
+        for i, g in enumerate(timej[busca]['gols']):
             print(f'    No jogo {i+1} fez {g} gols.')
     print('-' * 40)
 print('<<VOLTE SEMPRE>>')
