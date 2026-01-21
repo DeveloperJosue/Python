@@ -4,10 +4,15 @@ partidas = list()
 
 import time 
 
+#Cabeçalho
+print('\n   Cadastro de Jogadores de Futebol ')
+time.sleep(1)
+print("-=" * 20)
+
 # Cadastro de jogadores
 while True:
     jogador.clear()
-    jogador['nome'] = str(input('Nome do Jogador: '))
+    jogador['nome'] = str(input(' Nome do Jogador: '))
     tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
     partidas.clear()
 
@@ -27,8 +32,8 @@ while True:
     if resp == 'N':
         break
 
-time.sleep(0.3)
-print('Cadastro finalizado!')
+time.sleep(0.5)
+print('\nCadastro finalizado!')
 time.sleep(0.5)
 
 # Exibição do relatório
