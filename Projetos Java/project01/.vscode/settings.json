@@ -4,4 +4,14 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ]
+    {
+    "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-17"
+    }
+  ],
+  "java.format.settings.profile": "Google"
+}
+
 }
